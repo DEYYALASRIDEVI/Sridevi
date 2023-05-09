@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .con{
+            padding-left:35px;
+            padding-right:35px;
+            padding-top:20px;
+            text-align: justify;
+            background-color: beige;
+            color:rgb(15, 11, 241);
+        }
+        .a{
+            padding-top:10px;
+        }
+        .wrapper{
+            padding-left:35px;
+            padding-right:35px;
+            text-align: justify;
+            color:rgb(0, 0, 0);
+            background-color: darkgrey;
+        }
+        .b{
+            color:red;
+            text-align: center;
+            padding-top:60px;
+        }
+        .c{
+            padding:10px;
+            border-radius:9%;
+        }
+        .d{
+            padding:10px;
+            border-radius:9%;
+        }
+        .e{
+            padding:10px;
+            border-radius:9%;
+        }
+        .table,tr,td,th{
+            border:2px solid black;
+            text-align: center;
+            padding-top:10px;
+        } 
+        .box{
+            margin-left:100px;
+            margin-right:100px;
+            background-color: black;
+            }
+            .g{
+            text-align:center;
+        }
+        .box{
+            margin-left:50px;
+            margin-right:50px;
+        }
+        
+        .h{
+            width:250px;
+            height:250px;
+            border-radius:5px;
+            padding:10px;
+            
+        }
+        .h:hover{
+            transform:scale(2,2);
+        }
+        .i{
+            text-align: center;
+        }   
+        .j{
+            text-align: center;
+        }
+        .con1{
+            padding-left:80px;
+            padding-right:100px;
+        }
+        .g{
+            padding-top:70px;
+            color:rgb(219, 16, 9);
+        }
+        input{
+                box-shadow:none !important;
+                border:1px solid rgb(14, 13, 13) !important;
+                border-left:0px !important;
+                border-top:0px !important;
+                border-right:0px !important;
+                border-radius:0px !important;
+            }
+            input:focus{
+                color:rgb(18, 18, 22) !important;
+            }
+            label{
+                color:rgb(12, 12, 12) !important;
+            }
+        
+    </style>
+</head>
+<body>
+    <!----Header----->
+    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark bg-gradient">
+        <div class="container">
+           <img src="data:image/png;base64,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" alt="" width="40" height="40" class="rounded-circle">
+           <a href="" class="navbar-brand">Educational Institution</a>
+            <ul class="navbar-nav">
+                <li class="navbar-item"><a href="" class="btn btn-outline-warning mx-1">Home</a></li>
+                <li class="navbar-item"><a href="#About" class="btn btn-outline-warning mx-1">About Us</a></li>
+                <li class="navbar-item"><a href="#Institutions" class="btn btn-outline-warning mx-1">Institutions</a></li>
+                <li class="navbar-item"><a href="#Media" class="btn btn-outline-warning mx-1">Media</a></li>
+                <li class="navbar-item"><a href="#Placements" class="btn btn-outline-warning mx-1">Placements</a></li>
+                <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modal2">Sign up</button>
+                <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modal1">Sign in</button>
+            </ul>
+        </div>
+    </nav>
+  
+     <!---Body----->
+    <!---Home----->
+
+    <section class="banner">
+        <div class="carousel slide" data-bs-ride="carousel" id="carousel1">
+            <div class="carousel-indicators">
+                <div data-bs-target="#carousel1" data-bs-slide-to="0"></div>
+                <div data-bs-target="#carousel1" data-bs-slide-to="1"></div>
+                <div data-bs-target="#carousel1" data-bs-slide-to="2" class="active"></div>
+                <div data-bs-target="#carousel1" data-bs-slide-to="3"></div>
+                <div data-bs-target="#carousel1" data-bs-slide-to="4"></div>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="https://i.ytimg.com/vi/Rqjg-77AE9w/maxresdefault.jpg" alt="" width="1300px" height="538px">
+                <div class="carousel-caption">
+                    <h1 class="text-danger">Aditya Educational Institutions</h1>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://aditya.ac.in/aditya_blog/wp-content/uploads/2019/02/KKD-2.jpg" alt="" width="1300px" height="538px">
+                <div class="carousel-caption">
+                    <h1 class="text-info">Aditya Educational Institutions</h1>
+                </div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="https://myaccount.edunews.com/contents/ins/gallery_18030_gallery_23006.webp" alt="" width="1300px" height="538px">
+                <div class="carousel-caption">
+                    <h1 class="text-primary">Aditya Educational Institutions</h1>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://ik.imagekit.io/lhb4hvprkpz/img8_7aJkuzpeF.jpg?updatedAt=1627472961687" alt="" width="1300px" height="538px">
+                <div class="carousel-caption">
+                    <h1 class="text-danger">Aditya Educational Institutions</h1>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://aec.edu.in/images/gallery/APJ%203.JPG" alt="" width="1300px" height="538px">
+                <div class="carousel-caption">
+                    <h1 class="text-Warning">Aditya Educational Institutions</h1>
+                </div>
+                </div>
+            </div>
+            <a href="#carousel1" data-bs-slide="prev" class="carousel-control-prev"><i class="carousel-control-prev-icon"></i></a>
+            <a href="#carousel1" data-bs-slide="next" class="carousel-control-next"><i class="carousel-control-next-icon"></i></a>
+            
+        </div>
+    </section>
+
+     <!-----About----->
+
+     <section class="about" id="About">
+        <div class="con">
+            <h2 style="text-align:center; color:red;padding-top:60px">ABOUT US</h2>
+            <h2 style="text-align:center; color:BROWN">ABOUT ADITYA</h2>
+            <p class="a">What you become depends on what you know, which again depends on what you learn, and is ultimately a function of what you are taught. And who is a bigger teacher than experience? At Aditya Educational Institutions, we take pride in our sprawling three-decade pedagogy experience, as year after year we have produced great learners who went on to become outstanding individuals, to leave a mark of excellence in their respective domains.</p>
+
+            <p>Our focus is not just learning but the process of learning for learning is a phase which begins and gradually blooms into a beautiful flower and hence every stage of this metamorphosis requires intense care, sincerity and dedication. And rightly so, to address this journey of educational evolution, we have courses and academics from KG to PG. Be it our schools or colleges, our style of teaching knows no discrimination as we impart knowledge and wisdom just the way its expected of us.</p>
+
+            <p>Sharing the sublime ideas from academicians of distinguished calibre and lofty thoughts from cream of intelligence in all streams of educational horizon, with an exclusive intention to promote high standards in educational field, Aditya Academy was established in the year 1984 for enriching the knowledge of budding youth with innovative methodology and to equip them with competitive skills to face the future challenges.</p>
+
+            <p>It has made its beginning with a public school to cater to the prerequisite demands of primary and secondary education. In its process of widening the sphere Aditya started CBSE + 2 Course to meet the aspirations of the students spread across the country. As the journey progressed, Aditya Academy simply grew from strength to strength, thus spreading its wings to Junior Colleges, Degree Colleges, P.G. Colleges, Engineering and Pharmacy Colleges, Management, Nursing Colleges and Teacher Training Institutions.</p>
+
+            <p>A gamut of 50 educational institutions in different streams, with a faculty of 5,000 members and surging student strength of 50,000 stands testimony to the pillaring effect Aditya Academy has had on the society in the past three decades.</p>
+
+            <p>A small dream was transformed into a flamboyant reality indeed; this is the story of Aditya Educational Institutions.</p>
+            
+        </div>
+    </section>
+
+    <!---Institutions---->
+
+    <section class="Institutions" id="Institutions">
+        <div class="wrapper">
+            <div class="text1">
+                <h2 class="b">INSTITUTIONS</h2>
+                <h2 style="color:blue;text-align: center;">Aditya Engineering College</h2>
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Building Name</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Cotton Bhavan</td>
+            <td>Administrative Office, Examination Cell, Accounts, Admission Office, ECE.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>K. L. Rao Bhavan</td>
+            <td>Mechanical, Electrical, Petroleum Technology,Mining Engineering and Agricultural Engineering</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Bill Gates Bhavan</td>
+            <td>CSE, IT, H&BS, Civil, Management Sciences.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Abdul Kalam Bhavan</td>
+            <td>MCA and Polytechnic Courses.</td>
+        </tr>
+    </table>
+    <img class="c" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFPo8dZAdf27nq6dlw99oocYRmYIpc__GEB9_4LRXEAg&usqp=CAU&ec=48665701" alt="" width="380px" height="300">
+    <img class="d" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1oprPGeazEXHNY_EUkLkxNIOCFJyOxlNxqWJzyPbpjw&usqp=CAU&ec=48665701" alt="" width="380px" height="300">
+    <img class="e" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPubySOCAtiJsVemYTk_r1UkRKp38YCJAFkvbdkNNYQw&usqp=CAU&ec=48665701" alt="" width="380px" height="300"> 
+    <p>Aditya Engineering College was established in the academic year 2001-02 under the aegis of Aditya Academy, Kakinada with the approval of AICTE and Affiliated to JNTU with an intake of 180 in three UG Courses in Engineering & Technology.</p>
+
+    <p>The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway. The College is 35 Km away from Kakinada and Rajahmundry on ADB Road.</p>
+
+    <p>The College is situated in an eco-friendly area of 180 acres with thick greenery at Surampalem, Gandepalli Mandal, East Godavari District, Andhra Pradesh. The College is 15 KM away from Samalkot Railway Station on Howrah-Chennai Railway line in South Central Railway. The College is 35 Km away from Kakinada and Rajahmundry on ADB Road.</p>   
+    <p>Some of the institutions are,</p>
+    <ul>
+        <li>Aditya Business School</li>
+        <li>Aditya Degree & P.G.Colleges</li>
+        <li>Pharmacy Colleges</li>
+        <li>Nursing</li>
+        <li>Junior Colleges</li>
+        <li>Competative Cell</li>
+        <li>Forensic Science</li>
+        <li>CBSE+ +2</li>
+    </ul>        
+            </div>
+        </div>
+    </section>
+
+    <!---Images---->
+    <section class="Media" id="Media">
+        <div class="box">
+            <h3 class="g">GALLERY</h3>
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7pa5wtOGakEkKakdfCIPjO2rfn1m-gpM9ghA42WNOZw&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNqwyK7nnzi_nR5Ls53qSDkGaV84t6aoq5RyXM8LLh0g&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQowAOEb3FE3MwMrwZ-r3sVUNzobPnbVuByTUnxB4kQ&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_2iteAPX_os5fG5e_zGAGC_ZzdaC_hbMQRvC3DxWfkA&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL8IOS9qlpUEQJmLFKsoWzGXOlWa5avHnT7iZGG_tdEA&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa4eX71jg9UMQ953UwgvLfypqiWQue2s07xFln3Pr8FQ&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgPeyll68db7oXFLgC627b9iHFlXCtBnhJ_l0qzdErxQ&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN1J5TY-4a7dlWIq8yvjz0iHXQMOaYrR1DgkF0fGh75g&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHaeVm-a1jRRciildfgW_M9oMm0OHjFESYpydria_jZg&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW858Ybc54KjW0CbpmWE_NysgdTFtinMCYyB6A3udeJQ&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ4yMY3mHnKOteKEblcsX2ZG1Q3ZezbjS3H8s31cD811r2wf2hw220EdN27iO0n_twmxVukziblO4&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMSjgdXVGr7UtAl0T6Bw9YVevWJbosEdWDECM_K6-mm7cU428O8x7j-SY8sumvH_3SNULfy5cr4j4&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7-Aj29dKGP9YF9_gZDIBWeSF_JNtQ-lhNYhFUZLlFT3TLG9wm0YCqc8XxbGsg_7G4vmoZc8qGRC0&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7gHYltBmUopCbtYQtIFf4I4nOUI38868HCw37EmokA&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6KYevuTMt0MI4E-sQV2pFg-tkBXESO4Vw66ZrVxZBgg&usqp=CAU&ec=48665701">
+            <img class="h" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRpdsJrG5kkNgshxCfYSRIT_1fSK6yfeCAm__mspxf0Q&usqp=CAU&ec=48665701">
+        </div>
+    </section>
+
+    <!-----Placements---->
+
+    <section class="Placements" id="Placements">
+        <div class="con1">
+            <h2 style="text-align: center; color:blue;padding-top:60px;">PLACEMENTS</h2>
+            <p class="i">Our placement training program is very well-knit into the curriculum. We start from solving real life problems from day-1 at </p>
+            <p class="j">college under the guidance of our professors.</p>
+            <img src="https://aditya.ac.in/placements/assets/img/selections/AMAZON2.jpg" alt="" width="250" height="250">
+            <img src="https://aditya.ac.in/placements/assets/img/selections/BYJUS.jpg" alt="" width="250" height="250">
+            <img src="https://aditya.ac.in/placements/assets/img/selections/INFOSYS.jpg" alt="" width="250" height="250">
+            <img src="https://aditya.ac.in/placements/assets/img/selections/TCS-DIGITAL.jpg" alt="" width="250" height="250">
+            <p style="padding-top:20px">At Aditya, we believe employability is more than a skill; it is an attitude, it is a practice. So, we instill this attitude through continuous training in learning skills, behavioral skills, life skills in addition to aptitude and communication skills.And this training starts in the first year of engineering itself. Specific Campus Recruitment Training programs are conducted in the third year, with an emphasis on problem solving, critical thinking, communication skills and team work.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfDzAFo4jeKmd_1oaM73E9DTzVphMZW_we_0T9fwNXCQ&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfODNY0i6pewmh_5ght6BpfxNWFqsRbAhQD8DBpIKqlQ&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzDFOo47e9v8yUZT-Pd7ariSFnSTDF9CTPbN3iUGOCqQ&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ozh_wKbX-CENWl__5JBokMWeMHhTpPrBBFMcceTy2Q&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4WcLc38w3ZrKIXWC_PkdX9Ei15P1Cg2SLVak1_3tX0Q&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIfgnHivOb4l--_zVLJ4eZATqObeW7ncsAIYEA09j0Qw&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVUzySQAurTSVFsis7-_jpmrMffWF4Z1n3vu2RJnD3PA&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZXHLhUIb2Gs80j_yZjpdPhqSZ2Y5u-2iRojn4r_FeQ&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSenfV007HumccmwhowLgbecMZ4Duf9jdXs0CSPYkUFCg&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpPQwTjWdZfAId8aOEyC6IVSj7iSwKYywPv1M8LpythQ&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3UuZ7rZ8RxJAgCNJ8u7y5nl1Xmz5_D5GhJokU6HcXvw&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT25B6LFNeK1YJQgRD932DV_3m-u3yOVo8XaupPdXir7w&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSufWkIgrbn-J5TbZ_UmPIg4QGueLdYxi2gZGtdN4mCg&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM5LcWMULk51Qmy3xbCc-VaY6uO1cNp3oGttFLnqfuKA&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQACubKlS57B6AI_alsonfcycmKW-BcPGGXaAjDBNGquw&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLnAD72i3Jr1mosryEnRdJbu-cx9G1cvk6pmKz_Pqf4A&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv_HC9cAj2wUFuIoeIwHtV7y6iUcIhRSIn2J9gqmSUAQ&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSrWe8iD_s7KverbKKxiJ_zITSJLAoTzjbD-asp-G_NQ&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7f1GDDq6HZPCBcaHdHjKUbt0Gblnm0ix_KTh8TGB2Nw&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0unWyHXuQn9xBEHjnsQYIEP-7-rypuoDGKYwmM7pxl2ZnSRSPdfO3OeEuUZIqnqYqNqovAQcWWYk&usqp=CAU&ec=48665701" alt="" width="100" height="100">
+            <h3 style="padding-top:20px">Employability Training</h3>
+            <p>Training programmers are conducted throughout the year for students in an effort towards preparing the prospective students for the campus selection program.</p>
+            <ul>
+                <li>Aptitude</li>
+                <li>Communication skills</li>
+                <li>Leadership skills</li>
+                <li>Personality Development</li>
+                <li>Time management</li>
+                <li>Team management</li>
+                <li>Interview skills</li>
+            </ul>
+            <h3>Placement Cell</h3>
+            <p>Given the highly competitive and rocky job market scenario and highest importance is given to training of students in the areas of problem solving , critical thinking , communication skills and team work skills.</p>
+        </div>
+    </section>
+
+    <!---sign in---->
+<section class="modal" id="modal1">
+    <div >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1><button class="btn btn-info">Student Login</button></h1>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-floating mt-1">
+                            <label for="name" class="form-control">Enter User Name</label><br>
+                            <input type="name" name="name" id="name" class="form-control" placeholder="enter name">
+                        </div>
+                        <div class="form-floating mt-1">
+                            <label for="email" class="form-control">Enter email</label><br>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="enter email">
+                        </div>
+                        <div class="form-floating">
+                            <label for="number" class="form-control">Password</label><br>
+                            <input type="Password" name="Password" id="Password" class="form-control" placeholder="Password">
+                        </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info">Login</button>
+                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---Sign up---->
+
+<section class="modal" id="modal2">
+    <div >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><button class="btn btn-info">Create a Student Account</button></h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-floating mt-1">
+                            <label for="name" class="form-control">Enter User Name</label><br>
+                            <input type="name" name="name" id="name" class="form-control" placeholder="enter name">
+                        </div>
+                        <div class="form-floating mt-1">
+                            <label for="email" class="form-control">Enter email</label><br>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="enter email">
+                        </div>
+                        <div class="form-floating">
+                            <label for="password" class="form-control">Password</label><br>
+                            <input type="Password" name="Password" id="Password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-floating">
+                            <label for="number" class="form-control">Mobile Number</label><br>
+                            <input type="number" name="number" id="number" class="form-control" placeholder="number">
+                        </div>
+                        <div class="form-floating">
+                            <label for="date" class="form-control">Date of Birth</label><br>
+                            <input type="date" name="date" id="date" class="form-control" placeholder="date">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
